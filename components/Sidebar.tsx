@@ -1,7 +1,7 @@
 'use client'
 
-import { useRouter } from 'next/router';
-// import { useRouter } from 'next/navigation';
+// import { useRouter } from 'next/router';
+import { useRouter } from 'next/navigation';
 import { useSession } from "next-auth/react";
 
 export default function Sidebar(): JSX.Element | null {
@@ -14,7 +14,8 @@ export default function Sidebar(): JSX.Element | null {
   };
 
   const isActiveRoute = (route: string) => {
-    return router.pathname === route;
+    return router.push(route)
+    // return router.pathname === route;
   };
 
   if (status === 'authenticated') {
